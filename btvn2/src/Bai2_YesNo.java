@@ -10,13 +10,11 @@ public class Bai2_YesNo {
         String answer = scanner.nextLine();
         do {
             if (answer.equals("y")) {
-                while (true) {
                     System.out.println("Enter n:");
                     n = Integer.parseInt(scanner.nextLine());
                     System.out.println("Do you want to continue? (Y/N)");
                     answer = scanner.nextLine();
                 }
-            }
             else{
                 for (int i = 0; i <= n; i++) {
                     sum += i;
