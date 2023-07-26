@@ -24,10 +24,10 @@ public class Bai4 {
             array1[n] = value;
             System.out.println("Mảng số mới sau khi thêm phần tử" + Arrays.toString(array1));
 
-            //Đổi chỗ phần tử 2-3 ( array1[1] - array1[2])
-            int y = array1[1];
-            array1[1] = array1[2];
-            array1[2] = y;
+            //Đổi chỗ phần tử 2-3 ( array1[2] - array1[3])
+            int y = array1[2];
+            array1[2] = array1[3];
+            array1[3] = y;
             System.out.println("Mảng số mới sau khi đổi chỗ:" + Arrays.toString(array1));
 
             // Sắp xếp thứ tự mảng giảm dần
