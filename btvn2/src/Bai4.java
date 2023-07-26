@@ -32,7 +32,7 @@ public class Bai4 {
               System.out.println("Nhập phần tử mới");
           value = Integer.parseInt(scanner.nextLine());
           array1[n]=value;
-              System.out.println("Ban co muốn sửa phần tử mới thêm vào? (Y/N)");
+              System.out.println("Bạn có muốn sửa phần tử mới thêm vào? (Y/N)");
               answer = scanner.nextLine();
           }
             System.out.println(Arrays.toString(array1));
