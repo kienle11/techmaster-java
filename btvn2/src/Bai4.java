@@ -30,7 +30,7 @@ public class Bai4 {
             array1[3] = y;
             System.out.println("Mảng số mới sau khi đổi chỗ:" + Arrays.toString(array1));
 
-            // Sắp xếp thứ tự mảng giảm dần
+            // Sắp xếp thứ tự mảng tăng dần
             for (int i = 0; i < n ; i++) {
                 for (int j = 0; j < n-i ; j++) {
                     if (array1[j + 1] < array1[j]) {
