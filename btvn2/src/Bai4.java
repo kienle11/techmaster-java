@@ -38,7 +38,7 @@ public class Bai4 {
             System.out.println(Arrays.toString(array1));
 
           //Đổi chỗ phần tử 2-3 ( array1[2] - array1[3])
-            int temp1 = array1[2];
+            int temp1 = array1[2]; //temp1, temp2 là giá trị trung gian
             array1[2] = array1[3];
             array1[3] = temp1;
             System.out.println("Mảng số mới sau khi đổi chỗ:" + Arrays.toString(array1));
