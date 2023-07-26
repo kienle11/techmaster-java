@@ -26,7 +26,7 @@ public class Bai4 {
 
             //Cho người dùng thay đổi giá trị nhập:
             String answer ="";
-            System.out.println("Ban co muốn sửa phần tử mới thêm vào? (Y/N)");
+            System.out.println("Bạn có muốn sửa phần tử mới thêm vào? (Y/N)");
             answer = scanner.nextLine();
           while (answer.equals("y"))   {
               System.out.println("Nhập phần tử mới");
