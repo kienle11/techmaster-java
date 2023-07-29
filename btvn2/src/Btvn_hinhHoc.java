@@ -4,7 +4,7 @@ public class Btvn_hinhHoc {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Độ dài cạnh hình vuông");
-        int side = Integer.parseInt(scanner.nextLine());
+        double side = Integer.parseInt(scanner.nextLine());
         Hinh_Vuong hinhVuong = new Hinh_Vuong(side);
         double s = hinhVuong.calculateS();
         double p = hinhVuong.calculateP();

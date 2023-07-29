@@ -6,16 +6,15 @@ public class Hinh_Vuong extends Congthuc {
     public Hinh_Vuong(double side) {
         this.side = side;
     }
-    public double calculateS(){
-        return getDienTich(side);
-    }
-    public double calculateP(){
-        return getChuVi(side);
+
+    @Override
+    public double calculateS(double side) {
+        return super.calculateS(side);
     }
 
     @Override
     public String toString() {
-        return "Hinh Vuong{" +
+        return "Hinh_Vuong{" +
                 "side=" + side +
                 '}';
     }
