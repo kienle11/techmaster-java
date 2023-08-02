@@ -16,19 +16,12 @@ public class BizStudent extends TechmasterStudent{
     }
     public void inforBiz(){
         System.out.println(name+", Marketing: "+marketingPoint+", Sales: "+salesPoint);
-        System.out.println(getPoint());
-        getHocLuc();
+        System.out.println("Điểm: "+getPoint());
+        getRank();
     }
 
     @Override
-    public void getHocLuc() {
-        if (getPoint() < 5) {
-            System.out.println("Học lực yếu");
-        } else if (getPoint()>= 5 && getPoint() < 6.5) {
-            System.out.println("Học lực trung bình ");
-        } else if (getPoint() >=6.5 && getPoint()<7.5) {
-            System.out.println("Học lực khá");
-        }
-        else System.out.println("Học lực giỏi");
+    public void getRank() {
+        super.getRank();
     }
 }

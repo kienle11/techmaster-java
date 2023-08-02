@@ -3,12 +3,11 @@ package svien_techmaster;
 public abstract class TechmasterStudent {
     protected String name;
     protected String major;
-    protected double point;
 
-    public TechmasterStudent(String name, String major, double point) {
+
+    public TechmasterStudent(String name, String major) {
         this.name = name;
         this.major = major;
-        this.point = point;
     }
 
     public abstract double getPoint();
@@ -18,27 +17,19 @@ public abstract class TechmasterStudent {
     }
 
     public void information() {
-        System.out.println(name+", Chuyên ngành: "+major+", Điểm "+point);
-        getHocLuc();
+        System.out.println(name+", Chuyên ngành: "+major+", Điểm "+getPoint());
+        getRank();
     }
 
-    public void getHocLuc() {
-        if (point < 5) {
+    public void getRank() {
+        if (getPoint() < 5) {
             System.out.println("Học lực yếu");
-        } else if (point >= 5 && point < 6.5) {
+        } else if (getPoint() >= 5 && getPoint() < 6.5) {
             System.out.println("Học lực trung bình ");
-        } else if (point >=6.5 && point<7.5) {
+        } else if (getPoint()>=6.5 && getPoint()<7.5) {
             System.out.println("Học lực khá");
         }
         else System.out.println("Học lực giỏi");
     }
 
-
-    @Override
-    public String toString() {
-        return "SinhVienTechmaster{" +
-                "name='" + name + '\'' +
-                ", major='" + major + '\'' +
-                ", point=" + point + "}";
-    }
 }
