@@ -19,6 +19,6 @@ public class Train extends ManageTrafiic{
                 "speed:" + speed +
                 "km/h, distance:" + distance +
                 "km, Complete the road in: "+calculateTime()+
-                " h}";
+                "h}";
     }
 }

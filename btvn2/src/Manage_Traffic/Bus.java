@@ -22,6 +22,6 @@ public class Bus extends ManageTrafiic{
         return "Bus{" +
                 "speed:" + speed +
                 "km/h, distance:" + distance +
-                "km, "+ "Complete the road in: "+calculateTime()+" h}";
+                "km, "+ "Complete the road in: "+calculateTime()+"h}";
     }
 }

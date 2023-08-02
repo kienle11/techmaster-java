@@ -18,6 +18,6 @@ public class AirPlane extends ManageTrafiic{
         return "AirPlane{" +
                 "speed:" + speed +
                 "km/h, distance:" + distance +
-                " km, Complete the road in: "+calculateTime()+" h}";
+                " km, Complete the road in: "+calculateTime()+"h}";
     }
 }
