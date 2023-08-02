@@ -1,4 +1,4 @@
-package Manage_Traffic;
+package manage_traffic;
 
 public class Train extends ManageTrafiic{
     private double speed = 40;

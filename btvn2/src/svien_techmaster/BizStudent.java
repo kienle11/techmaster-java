@@ -1,4 +1,4 @@
-package Svien_Techmaster;
+package svien_techmaster;
 
 public class BizStudent extends TechmasterStudent{
     private double marketingPoint;

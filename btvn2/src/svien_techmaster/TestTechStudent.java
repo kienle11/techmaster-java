@@ -1,4 +1,4 @@
-package Svien_Techmaster;
+package svien_techmaster;
 
 import java.util.Scanner;
 

@@ -1,4 +1,4 @@
-package Manage_Traffic;
+package manage_traffic;
 
 public class AirPlane extends ManageTrafiic{
     private double speed = 80;

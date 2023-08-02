@@ -1,4 +1,4 @@
-package Svien_Techmaster;
+package svien_techmaster;
 
 public abstract class TechmasterStudent {
     protected String name;

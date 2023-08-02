@@ -1,4 +1,4 @@
-package Svien_Techmaster;
+package svien_techmaster;
 
 public class ITstudent extends TechmasterStudent{
     private double javaPoint;

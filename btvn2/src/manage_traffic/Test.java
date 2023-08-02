@@ -1,4 +1,4 @@
-package Manage_Traffic;
+package manage_traffic;
 
 import java.util.Scanner;
 
