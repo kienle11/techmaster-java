@@ -11,12 +11,8 @@ public class Test {
            System.out.println("Invalid value. Please re-enter");
            distance = Double.parseDouble(scanner.nextLine());
        };
-        Bus bus = new Bus(distance);
-        bus.calculateTime();
-        Train train = new Train(distance);
-        AirPlane airPlane = new AirPlane(distance);
-        System.out.println(train);
-        System.out.println(bus);
-        System.out.println(airPlane);
+        Bus bus = new Bus();
+        double time= bus.calculateTime(distance);
+        System.out.println("Complete the road in "+time);
     }
 }

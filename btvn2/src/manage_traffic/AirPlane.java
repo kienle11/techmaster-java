@@ -1,23 +1,10 @@
 package manage_traffic;
 
 public class AirPlane extends ManageTrafiic{
-    private double speed = 80;
-    private double distance;
-
-    public AirPlane(double distance) {
-        this.distance = distance;
-    }
+    public static final double speed = 80;
 
     @Override
-    public double calculateTime() {
+    public double calculateTime(double distance) {
         return distance/speed;
-    }
-
-    @Override
-    public String toString() {
-        return "AirPlane{" +
-                "speed:" + speed +
-                "km/h, distance:" + distance +
-                " km, Complete the road in: "+calculateTime()+"h}";
     }
 }
