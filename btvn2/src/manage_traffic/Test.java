@@ -13,6 +13,13 @@ public class Test {
        };
         Bus bus = new Bus();
         double time= bus.calculateTime(distance);
-        System.out.println("Complete the road in "+time);
+        System.out.println("Bus: Complete the road in "+time+"h");
+        Train train = new Train();
+        double timeTrain = train.calculateTime(distance);
+        System.out.println("Train: Complete the road in "+timeTrain+"h");
+        AirPlane airPlane = new AirPlane();
+        double timePlane = airPlane.calculateTime(distance);
+        System.out.println("Airplane: Complete the road in "+timePlane+"h");
+
     }
 }
