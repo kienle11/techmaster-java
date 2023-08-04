@@ -10,6 +10,11 @@ public class BizStudent extends TechmasterStudent{
         this.salesPoint = salesPoint;
     }
 
+    public BizStudent(double marketingPoint, double salesPoint) {
+        this.marketingPoint = marketingPoint;
+        this.salesPoint = salesPoint;
+    }
+
     @Override
     public double getPoint() {
         return (2*marketingPoint+salesPoint)/3;
@@ -23,5 +28,14 @@ public class BizStudent extends TechmasterStudent{
     @Override
     public void getRank() {
         super.getRank();
+    }
+
+    @Override
+    public String toString() {
+        return "BizStudent{" +
+                "marketingPoint=" + marketingPoint +
+                ", salesPoint=" + salesPoint +
+                ", name='" + name + '\'' +
+                '}';
     }
 }

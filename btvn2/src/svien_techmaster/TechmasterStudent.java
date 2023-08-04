@@ -10,6 +10,10 @@ public abstract class TechmasterStudent {
         this.major = major;
     }
 
+    public TechmasterStudent() {
+
+    }
+
     public abstract double getPoint();
 
     public TechmasterStudent(String name) {
@@ -22,7 +26,7 @@ public abstract class TechmasterStudent {
     }
 
     public void getRank() {
-        if (getPoint() < 5) {
+        if (getPoint()< 5) {
             System.out.println("Học lực yếu");
         } else if (getPoint() >= 5 && getPoint() < 6.5) {
             System.out.println("Học lực trung bình ");

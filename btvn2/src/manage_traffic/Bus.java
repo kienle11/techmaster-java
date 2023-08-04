@@ -8,4 +8,9 @@ public class Bus extends ManageTrafiic{
     public double calculateTime(double distance) {
         return distance/speed;
     }
+
+    @Override
+    public void printInfor(double distance) {
+        System.out.println(calculateTime(distance));
+    }
 }
