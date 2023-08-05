@@ -10,10 +10,7 @@ public class ManageProduct {
     private double amount;
     private double price;
     private String unit;
-   public static Arrays products(int n){
-       ManageProduct [] product = new ManageProduct[n];
-       return null;
-   }
+  
 
     public String getName() {
         return name;
