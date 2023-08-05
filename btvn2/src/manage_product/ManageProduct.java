@@ -1,6 +1,6 @@
 package manage_product;
 
-import java.util.Arrays;
+
 import java.util.Scanner;
 
 public class ManageProduct {
@@ -10,7 +10,7 @@ public class ManageProduct {
     private double amount;
     private double price;
     private String unit;
-  
+
 
     public String getName() {
         return name;
