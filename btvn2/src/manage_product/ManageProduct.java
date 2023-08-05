@@ -49,14 +49,14 @@ public class ManageProduct {
     System.out.println(id+". Tên sp: "+name+", Số lượng: "+amount+", Giá: "+price+"VND/"+unit+", Mô tả: "+description);
     }
     public void findName(Scanner scanner, ManageProduct[] products){
-        System.out.println("Ban muon tim ten sp nao");
+        System.out.println("Bạn muốn tìm tên sản phẩm nào");
         String answer = scanner.nextLine();
         for (ManageProduct p : products)
         if (answer.equals(p.getName()))
             System.out.println(p);
    }
     public void findID(Scanner scanner,ManageProduct[] products){
-        System.out.println("Ban muon tim id sp nao");
+        System.out.println("Nhập id sản phẩm bạn muốn tìm");
         int id = Integer.parseInt(scanner.nextLine());
         for (ManageProduct findID: products)
         if (id==findID.getId()) {
@@ -64,14 +64,14 @@ public class ManageProduct {
         }
     }
     public void findAmountUnder5(ManageProduct[] products){
-        System.out.println("Tìm các sp số lượng nhỏ hơn 5");
+        System.out.println("Tìm các sản phẩm số lượng nhỏ hơn 5");
         for (ManageProduct findAmount: products){
         if (findAmount.getAmount()<5) {
         System.out.println(findAmount);}
         }
     }
     public void setAmount(Scanner scanner,ManageProduct[] products){
-        System.out.println("Bạn muốn thay đổi số lượng sp nào");
+        System.out.println("Bạn muốn thay đổi số lượng sản phẩm nào");
         String answer3 = scanner.nextLine();
         for (ManageProduct amo: products){
             if (answer3.equals(amo.getName())) {
