@@ -13,6 +13,6 @@ public class Team {
 
     @Override
     public String toString() {
-        return " " + heroes ;
+        return name+"\t"+ heroes ;
     }
 }
