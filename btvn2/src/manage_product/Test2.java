@@ -13,20 +13,21 @@ public class Test2 {
         for (int i = 0; i < n; i++) {
           products[i]=service.enterInput(scanner);
         }
-        service.menu();
+       MenuProduct menuProduct = new MenuProduct();
+        MenuProduct.menu();
         do {
-              String answer = scanner.nextLine();
-              switch (answer) {
-                  case "1" -> service.getlistProduct(products);
-                  case "2" -> service.findName(scanner, products);
-                  case "3" -> service.findID(scanner, products);
-                  case "4" -> service.setAmount(scanner, products);
-                  case "5" -> service.findPrice(scanner, products);
-                  case "6" ->  service.findAmountUnder5(products);
-              }
-              System.out.println("Do you want to continue (Y/N)");
-             if (answer.equalsIgnoreCase("n"))break;
-             else if (answer.equalsIgnoreCase("y")) service.menu();
+            String answer = scanner.nextLine();
+            switch (answer) {
+                case "1" -> service.getlistProduct(products);
+                case "2" -> service.findName(scanner, products);
+                case "3" -> service.findID(scanner, products);
+                case "4" -> service.setAmount(scanner, products);
+                case "5" -> service.findPrice(scanner, products);
+                case "6" ->  service.findAmountUnder5(products);
+            }
+            System.out.println("Do you want to continue (Y/N)");
+            if (answer.equalsIgnoreCase("n"))break;
+            else if (answer.equalsIgnoreCase("y")) MenuProduct.menu();
          } while (true);
     }
 }

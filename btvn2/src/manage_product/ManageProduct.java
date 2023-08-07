@@ -39,7 +39,7 @@ public class ManageProduct {
     public void setAmount(double amount) {
         this.amount = amount;
     }
-    
+
     @Override
     public String toString() {
         return  id + ". " + name + '\t' +"Số lượng: "+amount+
