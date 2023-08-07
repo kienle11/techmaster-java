@@ -39,14 +39,7 @@ public class ManageProduct {
     public void setAmount(double amount) {
         this.amount = amount;
     }
-
-    public void outPut(){
-    System.out.println(id+". Tên sp: "+name+", Số lượng: "+amount+", Giá: "+price+"VND/"+unit+", Mô tả: "+description);
-    }
-
-
-
-
+    
     @Override
     public String toString() {
         return  id + ". " + name + '\t' +"Số lượng: "+amount+
