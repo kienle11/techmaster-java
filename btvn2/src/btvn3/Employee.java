@@ -1,4 +1,6 @@
-public class Employee extends Person{
+package btvn3;
+
+public class Employee extends Person {
    private double experience;
    private String workPlace;
 

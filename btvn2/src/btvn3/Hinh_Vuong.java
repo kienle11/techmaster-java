@@ -1,4 +1,6 @@
-public class Hinh_Vuong extends Congthuc{
+package btvn3;
+
+public class Hinh_Vuong extends Congthuc {
     private double side;
 
     public Hinh_Vuong(double side) {

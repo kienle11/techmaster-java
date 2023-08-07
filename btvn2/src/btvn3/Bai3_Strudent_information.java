@@ -1,3 +1,5 @@
+package btvn3;
+
 import java.util.Scanner;
 
 public class Bai3_Strudent_information {

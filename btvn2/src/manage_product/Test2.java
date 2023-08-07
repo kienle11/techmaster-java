@@ -9,17 +9,24 @@ public class Test2 {
         System.out.println("Nhập số lượng hàng hóa");
         int n = Integer.parseInt(scanner.nextLine());
         ManageProduct[] products = new ManageProduct[n];
-        ManageProduct product = new ManageProduct();
+        ProductService service = new ProductService();
         for (int i = 0; i < n; i++) {
-            product.enterInput(scanner);
-            products[i]= product;
-            product = new ManageProduct();
+          products[i]=service.enterInput(scanner);
         }
-        System.out.println(Arrays.toString(products));
-        product.findName(scanner,products); //Tìm theo tên sp
-        product.findID(scanner,products); //Tìm theo id
-        product.findAmountUnder5(products); // Tìm sp có số lượng <5
-        product.setAmount(scanner,products); // Cập nhật số lượng sp
-        product.findPrice(scanner,products); // Tìm sp trong tầm giá
+        service.menu();
+        do {
+              String answer = scanner.nextLine();
+              switch (answer) {
+                  case "1" -> service.getlistProduct(products);
+                  case "2" -> service.findName(scanner, products);
+                  case "3" -> service.findID(scanner, products);
+                  case "4" -> service.setAmount(scanner, products);
+                  case "5" -> service.findPrice(scanner, products);
+                  case "6" ->  service.findAmountUnder5(products);
+              }
+              System.out.println("Do you want to continue (Y/N)");
+             if (answer.equalsIgnoreCase("n"))break;
+             else if (answer.equalsIgnoreCase("y")) service.menu();
+         } while (true);
     }
 }

@@ -1,3 +1,5 @@
+package btvn3;
+
 import java.util.Scanner;
 
 public class Bai2_YesNo {

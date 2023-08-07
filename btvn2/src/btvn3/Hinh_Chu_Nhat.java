@@ -1,4 +1,6 @@
-public class Hinh_Chu_Nhat extends Congthuc{
+package btvn3;
+
+public class Hinh_Chu_Nhat extends Congthuc {
     private double length;
     private double width;
 

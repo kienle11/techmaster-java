@@ -1,10 +1,12 @@
+package btvn3;
+
 import java.util.Scanner;
 
-public class Main {
+public class Bai1_nhapSo {
     public static void main(String[] args) {
-        /*  Viết chương trình cho phép nhập vào một số nguyên dương n, tính tổng tất cả số chẵn trong khoảng từ 0 - n.
+         /*  Viết chương trình cho phép nhập vào một số nguyên dương n, tính tổng tất cả số chẵn trong khoảng từ 0 - n.
         Phuong phap Do-While*/
-                Scanner scanner = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         System.out.println("Moi nhap so nguyen n:");
         int n = Integer.parseInt(scanner.nextLine());
         int sum = 0;
@@ -17,5 +19,5 @@ public class Main {
         while (n>0);
 
         System.out.println("Tong cac so: "+sum);
-        }
     }
+}

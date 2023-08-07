@@ -1,3 +1,5 @@
+package btvn3;
+
 public class Product {
     private int id;
     private String name;
