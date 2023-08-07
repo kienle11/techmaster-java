@@ -14,7 +14,7 @@ public class LOL {
     @Override
     public String toString() {
         return "LOL:" +
-                " teamA: " + teamA +
-                ", teamB: " + teamB;
+                " Team: " + teamA +
+                ", Team: " + teamB;
     }
 }
