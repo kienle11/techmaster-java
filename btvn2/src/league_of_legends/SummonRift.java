@@ -6,21 +6,18 @@ import java.util.Scanner;
 public class SummonRift {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        //Team A
-        System.out.println("Team 1 name:");
-        String name1 = scanner.nextLine();
-        ArrayList<Hero> heroes1 = new ArrayList<>();
         LolService service = new LolService();
-        service.heroes(scanner,heroes1,service); //Tạo list tướng
-        Team teamA = new Team(heroes1,name1 );
-        //Team B
-        System.out.println("Team 2 name:");
-        String name2 = scanner.nextLine();
+        TeamService teamService = new TeamService();
+        ArrayList<Hero> heroes1 = new ArrayList<>();
+        System.out.println("Thong tin doi 1:");
+        Team team1= teamService.createTeam(scanner,service,heroes1);
+        System.out.println("Thong tin doi 2:");
         ArrayList<Hero> heroes2 = new ArrayList<>();
-        service.heroes(scanner,heroes2,service);
-        Team teamB = new Team(heroes2,name2);
-        LOL lol = new LOL(teamA, teamB);
+        Team team2 = teamService.createTeam(scanner,service,heroes2);
+        ArrayList<Team> teams = new ArrayList<>();
+        teams.add(team1);
+        teams.add(team2);
+        LOL lol = new LOL(teams);
         System.out.println(lol);
     }
-
 }

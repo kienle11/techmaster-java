@@ -3,18 +3,16 @@ package league_of_legends;
 import java.util.ArrayList;
 
 public class LOL {
-    private Team teamA;
-    private Team teamB;
+    private ArrayList<Team> teams;
 
-    public LOL(Team teamA, Team teamB) {
-        this.teamA = teamA;
-        this.teamB = teamB;
+    public LOL(ArrayList<Team> teams) {
+        this.teams = teams;
     }
 
     @Override
     public String toString() {
-        return "LOL:" +
-                " Team: " + teamA +
-                ", Team: " + teamB;
+        return "LOL{" +
+                "Teams: " + teams +
+                '}';
     }
 }

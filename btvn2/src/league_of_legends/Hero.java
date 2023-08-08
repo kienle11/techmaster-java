@@ -14,6 +14,6 @@ public class Hero {
 
     @Override
     public String toString() {
-        return "Hero "+ id +". "+name+"\t"+positon;
+        return id +". "+name+", Position: "+positon;
     }
 }
