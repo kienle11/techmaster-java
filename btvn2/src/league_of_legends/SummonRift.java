@@ -1,5 +1,11 @@
 package league_of_legends;
 
+import league_of_legends.entities.Hero;
+import league_of_legends.entities.LOL;
+import league_of_legends.entities.Team;
+import league_of_legends.service.LolService;
+import league_of_legends.service.TeamService;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 

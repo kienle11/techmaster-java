@@ -1,4 +1,4 @@
-package league_of_legends;
+package league_of_legends.entities;
 
 public class Hero {
     private String name;

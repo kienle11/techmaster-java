@@ -1,4 +1,6 @@
-package league_of_legends;
+package league_of_legends.entities;
+
+import league_of_legends.entities.Hero;
 
 import java.util.ArrayList;
 

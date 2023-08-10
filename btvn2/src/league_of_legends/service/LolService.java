@@ -1,6 +1,7 @@
-package league_of_legends;
+package league_of_legends.service;
 
-import java.util.ArrayList;
+import league_of_legends.entities.Hero;
+
 import java.util.Scanner;
 
 public class LolService {

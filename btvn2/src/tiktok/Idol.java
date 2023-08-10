@@ -7,7 +7,7 @@ public class Idol {
     private int id;
     private String name;
     private String email;
-    private ArrayList followers;
+    private ArrayList<Follower> followers;
     private String group;
 
     public Idol(String name, ArrayList followers, String group, String email) {
