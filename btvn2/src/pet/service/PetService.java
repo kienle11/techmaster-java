@@ -29,9 +29,11 @@ public class PetService {
     }
     public void match(ArrayList<Pet>pets,Pet pet){
         for (Pet pet1 : pets){
-            if (pet.getType().equals(pet1.getType()))
-                break;
+            if (pet.getType().equals(pet1.getType())){
+                System.out.println("Can't find a pet that different gender");
+                break;}
             else if (pet.getGender().equals(pet1.getGender())) {
+                System.out.println("Can't find a pet that same type");
                 break;
             }
             else System.out.println(pet1);
