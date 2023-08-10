@@ -1,5 +1,6 @@
 package worker.service;
 
+import worker.History;
 import worker.entities.Worker;
 
 import java.util.ArrayList;
@@ -25,7 +26,7 @@ public class WorkerService {
         } while (true);
     }
 
-    public void salaryUp(Scanner scanner, ArrayList<Worker> workers) {
+    public void salaryUp(Scanner scanner, ArrayList<Worker> workers, ArrayList<History> histories) {
         System.out.println("Enter Id worker");
         String id = scanner.nextLine();
         System.out.println("Enter the salary you want to increase");
@@ -33,11 +34,13 @@ public class WorkerService {
         for (Worker pt : workers) {
             if (pt.getId().equalsIgnoreCase(id)) {
                 pt.setSalary(pt.getSalary() + salaryUp);
-                workers.add(pt);
+                History history = new History(pt,"UP");
+                histories.add(history);
+                break;
             }
         }
     }
-    public void salaryDown(Scanner scanner, ArrayList<Worker> workers) {
+    public void salaryDown(Scanner scanner, ArrayList<Worker> workers,ArrayList<History> histories) {
         System.out.println("Enter Id worker");
         String id = scanner.nextLine();
         System.out.println("Enter the salary you want to decrease");
@@ -45,7 +48,9 @@ public class WorkerService {
         for (Worker pt : workers) {
             if (pt.getId().equalsIgnoreCase(id)) {
                 pt.setSalary(pt.getSalary() - salaryDown);
-                workers.add(pt);
+                History history = new History(pt,"DOWN");
+                histories.add(history);
+                break;
             }
         }
     }

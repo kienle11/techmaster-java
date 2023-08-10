@@ -4,6 +4,7 @@ import pet.entities.Pet;
 import pet.entities.Type;
 
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.Scanner;
 
 public class PetService {
@@ -29,6 +30,8 @@ public class PetService {
     }
     public void match(ArrayList<Pet>pets,Pet pet){
         for (Pet pet1 : pets){
+            Random random = new Random(100);
+            int pet2 = random.nextInt();
             if (pet.getType().equals(pet1.getType())){
                 System.out.println("Can't find a pet that different gender");
                 break;}

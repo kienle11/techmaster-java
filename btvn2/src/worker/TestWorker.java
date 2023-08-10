@@ -13,21 +13,18 @@ public class TestWorker {
         WorkerService service = new WorkerService();
         MenuWorker menuWorker = new MenuWorker();
         ArrayList<Worker> workers = new ArrayList<>();
-        menuWorker.menu();
-        int choose = menuWorker.selectMenu(scanner);
+        ArrayList<History> histories = new ArrayList<>();
         do {
+            menuWorker.menu();
+            int choose = menuWorker.selectMenu(scanner);
             switch (choose) {
-                case 1:
+                case 1 -> {
                     Worker worker = service.createWorker(scanner);
                     workers.add(worker);
-                    break;
-                case 2:
-                    service.salaryUp(scanner, workers);
-                    break;
-                case 3:
-                    service.salaryDown(scanner, workers);
-                    break;
-                case 4:
+                }
+                case 2 -> service.salaryUp(scanner, workers, histories);
+                case 3 -> service.salaryDown(scanner, workers, histories);
+                case 4 -> System.out.println(histories);
             }
             System.out.println("Do you want to continue? (Y/N)");
             String answer = scanner.nextLine();
