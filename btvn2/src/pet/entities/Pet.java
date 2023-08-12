@@ -6,7 +6,7 @@ public class Pet {
     private static int autoID;
     private int id;
     private String name;
-    private ArrayList species;
+    private String species;
     private int age;
     private String gender;
     private Type type;

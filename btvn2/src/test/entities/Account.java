@@ -1,12 +1,15 @@
-package oop_test;
+package test.entities;
 
 public class Account {
     private String userName ;
     private String password;
-    private String email /*="^[a-zA-Z0-9]*@{1}[a-zA-Z]+mail.com$"*/;
+    private String email;
 
-    public Account(String userName) {
+
+    public Account(String userName, String password, String email) {
         this.userName = userName;
+        this.password = password;
+        this.email = email;
     }
 
     public void setPassword(String password) {
@@ -23,6 +26,14 @@ public class Account {
 
     public String getPassword() {
         return password;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     @Override
