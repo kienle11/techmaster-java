@@ -1,4 +1,4 @@
-package test.entities;
+package test.view;
 
 public class Menu {
     public void menu(){

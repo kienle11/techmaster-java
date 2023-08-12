@@ -1,7 +1,7 @@
 package test;
 
 import test.entities.Account;
-import test.entities.Menu;
+import test.view.Menu;
 import test.service.OopService;
 
 import java.util.ArrayList;
