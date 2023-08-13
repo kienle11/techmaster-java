@@ -22,16 +22,16 @@ public class OopService {
         return null;}
 
     public boolean isValidEmail(String email) {
-        String emailRegex = "^[A-Za-z0-9+_.-]+@(.+)$";
+        String emailRegex = "^[A-Za-z0-9+_.-]+@{1}[a-zA-Z]+mail[.]com$";
         Pattern pattern = Pattern.compile(emailRegex);
         Matcher matcher = pattern.matcher(email);
-        return !matcher.matches();}
+        return matcher.matches();}
 
     public boolean isValidPassword(String password) {
         String passwordRegex = "^(?=.*[A-Z])(?=.*[,._;-])[a-zA-Z0-9,._;-]{7,15}$";
         Pattern pattern = Pattern.compile(passwordRegex);
         Matcher matcher = pattern.matcher(password);
-        return !matcher.matches();}
+        return matcher.matches();}
 
     public Account register(Scanner scanner, List<Account> accounts) {
             do {
@@ -43,11 +43,11 @@ public class OopService {
                 String email = scanner.nextLine();
                 if (findAccountByEmail(email, accounts) != null) {
                 System.out.println("Email đã có người sử dụng"); continue;}
-                else if (isValidEmail(email)) {
+                else if (!isValidEmail(email)) {
                 System.out.println("Email không hợp lệ");continue;}
                 System.out.println("Nhập mật khẩu(mật khẩu yêu cầu phải có 1 chữ cái in hoa và 1 ký tự)");
                 String passwordNew = scanner.nextLine();
-                if (isValidPassword(passwordNew)) {
+                if (!isValidPassword(passwordNew)) {
                 System.out.println("Mật khẩu nhập không đúng định dạng. Mời nhập lại");
                 } else {
                 System.out.println("Đăng ký thành công");
@@ -111,7 +111,7 @@ public class OopService {
         do {
         System.out.println("Mời bạn nhập email mới");
         String newEmail = scanner.nextLine();
-        if (isValidEmail(newEmail)) {
+        if (!isValidEmail(newEmail)) {
         System.out.println("Email không hợp lệ. Mời nhập lại "); continue;
         } else if (findAccountByEmail(newEmail, accounts) != null) {
         System.out.println("Email đã được sử dụng. Mời nhập email khác"); continue;
@@ -124,7 +124,7 @@ public class OopService {
     do {
         System.out.println("Mời bạn nhập mật khẩu mới");
         String newPassWord = scanner.nextLine();
-        if (isValidPassword(newPassWord)) {
+        if (!isValidPassword(newPassWord)) {
         System.out.println("Mật khẩu không hợp lệ. Mời nhập lại ");}
         else{
         account.setPassword(newPassWord);
@@ -140,8 +140,11 @@ public class OopService {
         else {
         System.out.println("Mời nhập mật khẩu mới");
         String newPass = scanner.nextLine();
+        if (!isValidPassword(newPass)) {
+        System.out.println("Mật khẩu không hợp lệ. Mời nhập lại ");}
+        else {
         account1.setPassword(newPass);
-        System.out.println("Thay đổi mật khẩu thành công");}
+        System.out.println("Thay đổi mật khẩu thành công");}}
     }
     public void select(int choose, Scanner scanner,List<Account>accounts, Menu menu){
         switch (choose) {
