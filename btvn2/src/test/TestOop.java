@@ -15,16 +15,12 @@ public class TestOop {
         OopService service = new OopService();
         Menu menu = new Menu();
         int choose = 0;
-        while (true) {
+        do {
         menu.menu();
         try {
-        choose = Integer.parseInt(scanner.nextLine());}
-        catch (Exception e){
-            System.out.printf("Mời bạn chọn lại. ");}
-        switch (choose) {
-        case 1 -> service.logIn(scanner, accounts,menu);
-        case 2 -> service.register(scanner, accounts);
-        default -> System.out.println("Lựa chọn không hợp lệ");}
-        }
+        choose = Integer.parseInt(scanner.nextLine());
+        } catch (Exception ignored) {}
+        service.select(choose, scanner, accounts, menu);
+        } while (true);
     }
 }
