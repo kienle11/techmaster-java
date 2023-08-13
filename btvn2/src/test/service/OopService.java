@@ -56,27 +56,27 @@ public class OopService {
     }
 
     public void logIn(Scanner scanner, List<Account>accounts, Menu menu){
-        System.out.println("Nhập username");
-        String name = scanner.nextLine();
-        Account account = findAccountByName(name, accounts);
-        if (account == null) {
+    System.out.println("Nhập username");
+    String name = scanner.nextLine();
+    Account account = findAccountByName(name, accounts);
+    if (account == null) {
         System.out.println("Kiểm tra lại username");
         return;}
         System.out.println("Nhập mật khẩu");
         String password = scanner.nextLine();
-        if (!password.equals(account.getPassword())) {
-            System.out.println("Sai mật khẩu");
-            System.out.println("1. Đăng nhập lại");
-            System.out.println("2. Quên mật khẩu");
-            int choose1 = 0;
-            try {
-            choose1 = Integer.parseInt(scanner.nextLine());}
-            catch (Exception ignored){}
-            switch (choose1) {
-            case 1 -> {}
-            case 2 -> forgotPassword(scanner, accounts);
-            default -> System.out.println("Lựa chọn không hợp lệ");}
-        } else {
+    if (!password.equals(account.getPassword())) {
+        System.out.println("Sai mật khẩu");
+        System.out.println("1. Đăng nhập lại");
+        System.out.println("2. Quên mật khẩu");
+        int choose1 = 0;
+        try {
+        choose1 = Integer.parseInt(scanner.nextLine());}
+        catch (Exception ignored){}
+        switch (choose1) {
+        case 1 -> {}
+        case 2 -> forgotPassword(scanner, accounts);
+        default -> System.out.println("Lựa chọn không hợp lệ");}}
+    else {
             System.out.println("Chào mừng " + name + ", bạn có thể thực hiện các công việc sau:");
             int choice =0;
             do {
@@ -94,9 +94,8 @@ public class OopService {
             scanner.close();
             System.exit(0);}
             default -> System.out.print("Lựa chọn không hợp lệ");}
-            } while (choice != 4);
-        }
-    }
+    } while (choice != 4);}}
+
     public void changeName(Scanner scanner, List<Account>accounts, Account account){
     do {
         System.out.println("Mời bạn nhập tên mới");
@@ -122,7 +121,7 @@ public class OopService {
         }while (true);
     }
     public void changePassword(Scanner scanner, Account account){
-        do {
+    do {
         System.out.println("Mời bạn nhập mật khẩu mới");
         String newPassWord = scanner.nextLine();
         if (isValidPassword(newPassWord)) {
@@ -131,18 +130,18 @@ public class OopService {
         account.setPassword(newPassWord);
         System.out.println("Thay đổi mật khẩu thành công.");break;}
     }while (true);}
+
     public void forgotPassword(Scanner scanner, List<Account>accounts){
         System.out.println("Nhập email");
         String email = scanner.nextLine();
         Account account1 = findAccountByEmail(email, accounts);
         if (account1 == null) {
-        System.out.println("Tài khoản ko tồn tại");
-        } else {
+        System.out.println("Tài khoản ko tồn tại");}
+        else {
         System.out.println("Mời nhập mật khẩu mới");
         String newPass = scanner.nextLine();
         account1.setPassword(newPass);
-        System.out.println("Thay đổi mật khẩu thành công");
-        }
+        System.out.println("Thay đổi mật khẩu thành công");}
     }
     public void select(int choose, Scanner scanner,List<Account>accounts, Menu menu){
         switch (choose) {
