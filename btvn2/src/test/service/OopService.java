@@ -138,13 +138,15 @@ public class OopService {
         if (account1 == null) {
         System.out.println("Tài khoản ko tồn tại");}
         else {
+        do {
         System.out.println("Mời nhập mật khẩu mới");
         String newPass = scanner.nextLine();
         if (!isValidPassword(newPass)) {
         System.out.println("Mật khẩu không hợp lệ. Mời nhập lại ");}
         else {
         account1.setPassword(newPass);
-        System.out.println("Thay đổi mật khẩu thành công");}}
+        System.out.println("Thay đổi mật khẩu thành công");break;}
+        }while (true);}
     }
     public void select(int choose, Scanner scanner,List<Account>accounts, Menu menu){
         switch (choose) {
