@@ -1,4 +1,7 @@
-package electric_money;
+package electric_money.service;
+
+import electric_money.entities.Customer;
+import electric_money.entities.ElectricReceipt;
 
 import java.util.List;
 import java.util.Scanner;

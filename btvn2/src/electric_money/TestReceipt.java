@@ -1,5 +1,8 @@
 package electric_money;
 
+import electric_money.entities.Customer;
+import electric_money.service.ElectricService;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 

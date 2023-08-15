@@ -1,6 +1,6 @@
-package electric_money;
+package electric_money.entities;
 
-import java.util.ArrayList;
+import electric_money.entities.Customer;
 
 public class ElectricReceipt {
     private Customer customer;

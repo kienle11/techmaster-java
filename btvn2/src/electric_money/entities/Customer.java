@@ -1,4 +1,4 @@
-package electric_money;
+package electric_money.entities;
 
 public class Customer {
     private String name;
