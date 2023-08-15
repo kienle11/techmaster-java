@@ -33,7 +33,7 @@ public class ElectricService {
             double moneypay = getMoneyPay(oldElectricNumber,newElectricNumber);
             return new ElectricReceipt(customer, oldElectricNumber,newElectricNumber,moneypay);}
 
-    public void inFor(int n, Scanner scanner, List<Customer> customers){
+    public void enterInput(int n, Scanner scanner, List<Customer> customers){
         for (int i = 0; i<n; i++){
             System.out.println("Nhập thông tin khách hàng "+(i+1));
             Customer customer= createCustomer(scanner);

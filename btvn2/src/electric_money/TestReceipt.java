@@ -15,7 +15,7 @@ public class TestReceipt {
                System.out.println("Nhập số hộ sử dụng điện");
                try {
                int n = Integer.parseInt(scanner.nextLine());
-               service.inFor(n, scanner, customers);break;
+               service.enterInput(n, scanner, customers);break;
                } catch (Exception e) {
                System.out.println("Chỉ nhận dữ liệu dạng số");}
            }while (true);
