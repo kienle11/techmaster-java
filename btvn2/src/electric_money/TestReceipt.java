@@ -11,13 +11,13 @@ public class TestReceipt {
         Scanner scanner = new Scanner(System.in);
         ElectricService service = new ElectricService();
         ArrayList<Customer> customers = new ArrayList<>();
-           do {
-               System.out.println("Nhập số hộ sử dụng điện");
-               try {
-               int n = Integer.parseInt(scanner.nextLine());
-               service.enterInput(n, scanner, customers);break;
-               } catch (Exception e) {
-               System.out.println("Chỉ nhận dữ liệu dạng số");}
-           }while (true);
+        do {
+          System.out.println("Nhập số hộ sử dụng điện");
+          try {
+          int n = Integer.parseInt(scanner.nextLine());
+          service.enterInput(n, scanner, customers);break;
+          } catch (Exception e) {
+          System.out.println("Chỉ nhận dữ liệu dạng số");}
+        }while (true);
     }
 }

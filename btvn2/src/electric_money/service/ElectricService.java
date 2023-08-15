@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class ElectricService {
     public double getMoneyPay(double oldElectricNumber, double newElectricNumber) {
-        return (newElectricNumber - oldElectricNumber) * 750;}
+    return (newElectricNumber - oldElectricNumber) * 750;}
 
     public Customer createCustomer(Scanner scanner) {
             System.out.println("Tên chủ hộ ");
