@@ -15,7 +15,10 @@ public class ElectricReceipt {
         this.moneyPay = moneyPay;
     }
 
-    public double getMoneyPay(double oldElectricNumber, double newElectricNumber){
-        return (this.newElectricNumber-this.oldElectricNumber)*750;
+    @Override
+    public String toString() {
+        return customer +"\n"+
+                "Hóa đơn: "+"Chỉ số điện cũ: "+oldElectricNumber+", Chỉ số điện mới: "+newElectricNumber
+                +". Thành tiền: "+ moneyPay+"VND";
     }
 }

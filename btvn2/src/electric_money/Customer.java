@@ -13,10 +13,8 @@ public class Customer {
 
     @Override
     public String toString() {
-        return "Customer{" +
-                "name='" + name + '\'' +
-                ", houseNumber=" + houseNumber +
-                ", electricNumber=" + electricNumber +
-                '}';
+        return "Khách hàng: " + name +
+                ", Số nhà: " + houseNumber +
+                ", Số công tơ điện: " + electricNumber;
     }
 }
