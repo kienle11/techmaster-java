@@ -114,7 +114,7 @@ public class ReaderImpl implements ITools<Reader>{
                 else System.out.println("Không tìm thấy độc giả");}
             }
             case 2 -> {
-                System.out.println("Nhập tên cuốn sách bạn muốn tìm");
+                System.out.println("Nhập tên");
                 String readerName = scanner.nextLine();
                 for (Reader reader: readers) {
                 if (readerName.equalsIgnoreCase(reader.getName())) {
