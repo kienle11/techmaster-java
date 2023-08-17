@@ -9,12 +9,11 @@ public class BookImpl implements ITools<Book> {
 
     public void manageBookSelect(Scanner scanner, List<Book> books) {
         do {
-            System.out.println("Bạn có thể thực hiện những việc sau");
-            System.out.println("Thêm thông tin cuốn sách mới");
-            System.out.println("Xóa 1 cuốn sách");
-            System.out.println("Sửa thông tin  cuốn sách ");
-            System.out.println("Hiển thị thông tin sách");
-            System.out.println("Thoát");
+            System.out.println("1. Thêm thông tin cuốn sách mới");
+            System.out.println("2. Xóa 1 cuốn sách");
+            System.out.println("3. Sửa thông tin  cuốn sách ");
+            System.out.println("4. Hiển thị thông tin sách");
+            System.out.println("5. Thoát");
             System.out.println("Mời bạn chọn");
             int choose = 0;
             try {

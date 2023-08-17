@@ -23,16 +23,19 @@ public class TestManage {
         TicketImpl ticket = new TicketImpl();
         List<BorrowTicket> borrowTickets = new ArrayList<>();
         Menu menu = new Menu();
-        menu.menu();
-        do {
-            int answer = Integer.parseInt(scanner.nextLine());
+        int answer =0;
+        do {menu.menu();
+            try{
+                answer = Integer.parseInt(scanner.nextLine());
             switch (answer) {
                 case 1 -> reader.manageReaderSelect(scanner, readers);
                 case 2 -> book.manageBookSelect(scanner, books);
                 case 3 -> ticket.menuTicket(scanner, readers, books, borrowTickets);
+                case 4 -> {}
                 default -> System.out.println("Lựa chọn không hợp lệ");
+            }}catch (Exception e){
+                System.out.println("Mời chọn lại");
             }
-            if (answer==4)break;
-        } while (true);
+        } while (answer!=4);
     }
 }
