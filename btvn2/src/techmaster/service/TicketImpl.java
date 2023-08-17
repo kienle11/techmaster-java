@@ -10,6 +10,17 @@ import java.util.List;
 import java.util.Scanner;
 
 public class TicketImpl {
+    public void menuTicket(Scanner scanner,List<Reader> readers,List<Book>books,List<BorrowTicket>tickets){
+        System.out.println("1. Tạo phiếu mượn sách");
+        System.out.println("2. Trả sách");
+        int choose = Integer.parseInt(scanner.nextLine());
+        switch (choose) {
+            case 1 -> createTicket(scanner, readers, books, tickets);
+            case 2 -> returnTicket(scanner, tickets);
+            default -> System.out.println("Lựa chọn không hợp lệ");
+        }
+    }
+
     public void createTicket(Scanner scanner, List<Reader> readers,List<Book>books,List<BorrowTicket>tickets){
         ReaderImpl rd = new ReaderImpl();
         BookImpl book = new BookImpl();
