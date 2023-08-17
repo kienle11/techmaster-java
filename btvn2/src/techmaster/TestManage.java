@@ -6,6 +6,7 @@ import techmaster.entities.Reader;
 import techmaster.service.BookImpl;
 import techmaster.service.ReaderImpl;
 import techmaster.service.TicketImpl;
+import techmaster.view.Menu;
 
 import javax.swing.*;
 import java.util.ArrayList;
@@ -21,22 +22,17 @@ public class TestManage {
         List<Book> books = new ArrayList<>();
         TicketImpl ticket = new TicketImpl();
         List<BorrowTicket> borrowTickets = new ArrayList<>();
-        System.out.println("Chương trình quản lý sách Techmaster");
-        System.out.println("1. Quản lý sách");
-        System.out.println("2. Quản lý độc giả");
-        System.out.println("3. Quản lý mượn trả sách");
-        System.out.println("4. Thoát chương trình");
-        System.out.println("Bạn có thể thực hiện các chức năng trên. Mời chọn");
-        int answer = Integer.parseInt(scanner.nextLine());
-        switch (answer){
-            case 1:
-                reader.manageReaderSelect(scanner,readers); break;
-            case 2:
-                book.manageBookSelect(scanner,books); break;
-            case 3:
-                ticket.menuTicket(scanner,readers,books,borrowTickets);break;
-            default:
-                System.out.println("Lựa chọn không hợp lệ");break;
-        } if (answer==4) return;
+        Menu menu = new Menu();
+        menu.menu();
+        do {
+            int answer = Integer.parseInt(scanner.nextLine());
+            switch (answer) {
+                case 1 -> reader.manageReaderSelect(scanner, readers);
+                case 2 -> book.manageBookSelect(scanner, books);
+                case 3 -> ticket.menuTicket(scanner, readers, books, borrowTickets);
+                default -> System.out.println("Lựa chọn không hợp lệ");
+            }
+            if (answer==4)break;
+        } while (true);
     }
 }
