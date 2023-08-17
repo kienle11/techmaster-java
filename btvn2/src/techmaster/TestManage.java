@@ -4,12 +4,10 @@ import techmaster.entities.Book;
 import techmaster.entities.BorrowTicket;
 import techmaster.entities.Reader;
 import techmaster.service.BookImpl;
-import techmaster.service.MenuService;
 import techmaster.service.ReaderImpl;
 import techmaster.service.TicketImpl;
 import techmaster.view.Menu;
 
-import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -25,7 +23,6 @@ public class TestManage {
         List<BorrowTicket> borrowTickets = new ArrayList<>();
         Menu menu = new Menu();
         int answer =0;
-        MenuService service = new MenuService();
-        service.doSelectMenu(menu,scanner,answer,reader,readers,book,books,ticket,borrowTickets);
+        menu.doSelectMenu(scanner,answer,reader,readers,book,books,ticket,borrowTickets);
     }
 }
