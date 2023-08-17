@@ -30,5 +30,16 @@ public class TicketImpl {
         tickets.add(ticket);
         System.out.println("Tạo phiếu thành công");
     }
-
+public void returnTicket(Scanner scanner, List<BorrowTicket>tickets){
+    System.out.println("Nhập id phiếu");
+    int idTicket = Integer.parseInt(scanner.nextLine());
+    for (BorrowTicket ticket: tickets){
+        if (idTicket==ticket.getId()){
+            System.out.println("Trả sách thành công");
+            break;
+        }
+        else System.out.println("Không tìm thấy phiếu mượn sách");
+        return;
+    }
+}
 }
