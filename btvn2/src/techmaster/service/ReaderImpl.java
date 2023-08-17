@@ -9,12 +9,11 @@ public class ReaderImpl implements ITools<Reader>{
 
     public void manageReaderSelect(Scanner scanner, List<Reader>readers) {
         do {
-            System.out.println("Bạn có thể thực hiện những việc sau");
-            System.out.println("Thêm thông tin độc giả mới");
-            System.out.println("Xóa 1 độc giả");
-            System.out.println("Sửa thông tin độc giả");
-            System.out.println("Hiển thị thông tin độc giả");
-            System.out.println("Thoát");
+            System.out.println("1. Thêm thông tin độc giả mới");
+            System.out.println("2. Xóa 1 độc giả");
+            System.out.println("3. Sửa thông tin độc giả");
+            System.out.println("4. Hiển thị thông tin độc giả");
+            System.out.println("5. Thoát");
             System.out.println("Mời bạn chọn");
             int choose =0;
             try {
