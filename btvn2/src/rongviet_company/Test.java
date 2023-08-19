@@ -42,15 +42,16 @@ public class Test {
                 int answer1 = Integer.parseInt(scanner.nextLine());
                 switch (answer1){
                     case 1:
-                        Collections.sort(employees, new Comparator<Employee>() {
+                        employees.sort(new Comparator<Employee>() {
                             @Override
                             public int compare(Employee o1, Employee o2) {
-                                return o1.getName().compareToIgnoreCase(o2.getName());}
+                                return o1.getName().compareToIgnoreCase(o2.getName());
+                            }
                         });
                         for (Employee employee: employees){
                             System.out.println(employee);} break;
                     case 2:
-                        
+
 
                 }
         }
