@@ -3,8 +3,6 @@ package rongviet_company.entities;
 import rongviet_company.entities.Employee;
 
 public class MarketingStaff extends Employee {
-    private static int autoID;
-    private int id;
     private double kpi;
     private double bonusPercent;
 
@@ -12,7 +10,6 @@ public class MarketingStaff extends Employee {
         super(name, salary);
         this.kpi = kpi;
         this.bonusPercent = bonusPercent;
-        this.id = ++autoID;
     }
 
     public void setKpi(double kpi) {
@@ -21,5 +18,13 @@ public class MarketingStaff extends Employee {
 
     public void setBonusPercent(double bonusPercent) {
         this.bonusPercent = bonusPercent;
+    }
+
+    @Override
+    public String toString() {
+        return "MarketingStaff: " +id+". "+name+
+                ", kpi: " + kpi +
+                ", bonusPercent: " + bonusPercent+
+                ", salary: " + salary;
     }
 }

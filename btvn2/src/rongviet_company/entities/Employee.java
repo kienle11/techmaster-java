@@ -27,4 +27,13 @@ public class Employee {
     public double getSalary() {
         return salary;
     }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", salary=" + salary +
+                '}';
+    }
 }

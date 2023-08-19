@@ -12,4 +12,11 @@ public class Manager extends Employee {
     public void setResponsibleSalary(double responsibleSalary) {
         this.responsibleSalary = responsibleSalary;
     }
+
+    @Override
+    public String toString() {
+        return "Manager " + id+". "+name+
+                ". ResponsibleSalary:" + responsibleSalary +
+                ", salary: " + salary;
+    }
 }
