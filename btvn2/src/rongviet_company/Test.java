@@ -56,7 +56,15 @@ public class Test {
                     default -> System.out.println("Lựa chọn không hợp lệ");
                 } break;
             case 4:
-
+                System.out.println("1. Nhân viên hành chính, 2. Nhân viên tiếp thị, 3. Trưởng phòng");
+                System.out.println("Mời bạn chọn");
+                int answer4 = Integer.parseInt(scanner.nextLine());
+                switch (answer4) {
+                    case 1 -> employeeService.findBySalary(scanner, employees);
+                    case 2 -> mktService.findBySalary(scanner, mktStaffs);
+                    case 3 -> manaService.findBySalary(scanner, managers);
+                    default -> System.out.println("Lựa chọn không hợp lệ");
+                } break;
         }
     }
 }
