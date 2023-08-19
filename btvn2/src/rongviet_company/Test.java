@@ -18,9 +18,7 @@ public class Test {
         EmployeeServiceImpl employeeService = new EmployeeServiceImpl();
         List<Employee> employees = new ArrayList<>();
         MktServiceImpl mktService = new MktServiceImpl();
-        List<MarketingStaff> mktStaffs = new ArrayList<>();
         ManaServiceImpl manaService = new ManaServiceImpl();
-        List<Manager> managers = new ArrayList<>();
         Menu menu = new Menu();
         int choice;
         do {
@@ -43,6 +41,13 @@ public class Test {
                 employeeService.delete(scanner, employees); break;
             case 4:
                 employeeService.findBySalary(scanner, employees);break;
+            case 5:
+                System.out.println("Bạn muốn sắp xếp: 1.Theo tên, 2.Theo thu nhập ");
+                int answer1 = Integer.parseInt(scanner.nextLine());
+                switch (answer1){
+                    case 1:
+
+                }
         }
     } while (choice!=7);
 }}
