@@ -20,40 +20,6 @@ public class Test {
         do {
         menu.menu();
         choice = Integer.parseInt(scanner.nextLine());
-        switch (choice){
-            case 1:
-                System.out.println("1. Nhân viên hành chính, 2. Nhân viên tiếp thị, 3. Trưởng phòng");
-                System.out.println("Mời bạn chọn");
-                int answer = Integer.parseInt(scanner.nextLine());
-                switch (answer) {
-                    case 1 -> employeeService.add(scanner, employees);
-                    case 2 -> mktService.add(scanner, employees);
-                    case 3 -> manaService.add(scanner, employees);
-                    default -> System.out.println("Lựa chọn không hợp lệ");
-                } break;
-            case 2:
-                employeeService.display(employees,scanner); break;
-            case 3:
-                employeeService.delete(scanner, employees); break;
-            case 4:
-                employeeService.findBySalary(scanner, employees);break;
-            case 5:
-                System.out.println("Bạn muốn sắp xếp: 1.Theo tên, 2.Theo thu nhập ");
-                int answer1 = Integer.parseInt(scanner.nextLine());
-                switch (answer1){
-                    case 1:
-                        employees.sort(new Comparator<Employee>() {
-                            @Override
-                            public int compare(Employee o1, Employee o2) {
-                                return o1.getName().compareToIgnoreCase(o2.getName());
-                            }
-                        });
-                        for (Employee employee: employees){
-                            System.out.println(employee);} break;
-                    case 2:
-
-
-                }
-        }
+        menu.menuSelect(choice,scanner,employees,employeeService,mktService,manaService);
     } while (choice!=7);
 }}
