@@ -69,7 +69,7 @@ public class Menu {
             case 6:
                 if (employees.size()<5) System.out.println(employees);
                 else {for (Employee employee: employees);
-                    
+
                 }
             case 7: break;
             default:
