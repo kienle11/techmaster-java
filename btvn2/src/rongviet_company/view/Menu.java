@@ -67,6 +67,10 @@ public class Menu {
                     }
                 } break;
             case 6:
+                if (employees.size()<5) System.out.println(employees);
+                else {for (Employee employee: employees);
+                    
+                }
             case 7: break;
             default:
                 System.out.println("Lưa chọn không hợp lệ "); break;
