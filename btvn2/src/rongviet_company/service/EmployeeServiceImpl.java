@@ -1,6 +1,7 @@
 package rongviet_company.service;
 
 import rongviet_company.entities.Employee;
+import rongviet_company.entities.MarketingStaff;
 
 import java.util.List;
 import java.util.Scanner;
@@ -53,11 +54,33 @@ public class EmployeeServiceImpl implements IManage<Employee> {
             } else System.out.println("Khong tim thay");
         }
     }
+
+    public void findBySalary(Scanner scanner,List<Employee>employees) {
+        System.out.println("Bạn muốn tìm trong mức lương nào");
+        System.out.println("1. Dưới 5 triệu");
+        System.out.println("2. Trên 5 triệu-dưới 10 triệu");
+        System.out.println("3. Trên 10 triệu");
+        int answer = Integer.parseInt(scanner.nextLine());
+         for (Employee employee: employees) {
+        switch (answer) {
+            case 1 -> {
+                if (employee.getSalary() < 500000) ;
+                System.out.println(employee);
+            }
+            case 2 -> {
+                if (employee.getSalary() > 5000000 && employee.getSalary() < 10000000)
+                    System.out.println(employee);
+            }
+            case 3 -> {
+                if (employee.getSalary() > 10000000)
+                    System.out.println(employee);
+            }
+            default -> System.out.println("Lựa chọn không hợp lệ");
+        }
+    }}
+
     public double calculateTaxes(double salary){
         if (salary<11000000) return 0;
         return salary*0.1;
     }
-public double calculateSalary(double salary){
-        return salary;
-}
 }

@@ -16,7 +16,8 @@ public class ManaServiceImpl implements IManage<Manager>{
         double salary = Double.parseDouble(scanner.nextLine());
         System.out.println("Lương trách nhiệm");
         double responsibleSalary = Double.parseDouble(scanner.nextLine());
-        Manager manager = new Manager(name,salary,responsibleSalary);
+        double totalSalary = salary+responsibleSalary;
+        Manager manager = new Manager(name,totalSalary,responsibleSalary);
         managers.add(manager);
         System.out.println("Đã thêm thành công");
     }
