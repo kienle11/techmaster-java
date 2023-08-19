@@ -1,16 +1,12 @@
 package rongviet_company;
 
 import rongviet_company.entities.Employee;
-import rongviet_company.entities.Manager;
-import rongviet_company.entities.MarketingStaff;
 import rongviet_company.service.EmployeeServiceImpl;
 import rongviet_company.service.ManaServiceImpl;
 import rongviet_company.service.MktServiceImpl;
 import rongviet_company.view.Menu;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class Test {
     public static void main(String[] args) {
@@ -46,6 +42,15 @@ public class Test {
                 int answer1 = Integer.parseInt(scanner.nextLine());
                 switch (answer1){
                     case 1:
+                        Collections.sort(employees, new Comparator<Employee>() {
+                            @Override
+                            public int compare(Employee o1, Employee o2) {
+                                return o1.getName().compareToIgnoreCase(o2.getName());}
+                        });
+                        for (Employee employee: employees){
+                            System.out.println(employee);} break;
+                    case 2:
+                        
 
                 }
         }

@@ -28,6 +28,10 @@ public class Employee {
         return salary;
     }
 
+    public String getName() {
+        return name;
+    }
+
     @Override
     public String toString() {
         return "Employee{" +
