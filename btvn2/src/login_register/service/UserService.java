@@ -45,22 +45,17 @@ public class UserService {
                     try {
                         int choose = Integer.parseInt(scanner.nextLine());
                         switch (choose) {
-                            case 1 -> {
-                            }
+                            case 1 -> {}
                             case 2 -> {
-                                forgotPass(scanner, userMap, userName);
-                            }
+                            forgotPass(scanner, userMap, userName);}
                         }
                     } catch (Exception e) {
-                        System.out.println("Can only choose number");
-                    }
-                } else {
+                      System.out.println("Can only choose number");}
+               }else {
                     System.out.println("Login successful. Hello " + userName);
-                    break;
-                }
+                    break;}
             }
-        } while (true);
-    }
+        } while (true);}
 
     public void forgotPass(Scanner scanner, Map<String, User> userMap, String userName) {
         do {
