@@ -14,13 +14,7 @@ public class TestLogin {
         Map<String, User>userMap=new HashMap<>();
         UserService service = new UserService();
         Menu menu = new Menu();
-        int choice ;
         do {
-        menu.displayMenu();
-        try {
-        choice =Integer.parseInt(scanner.nextLine());
-        menu.menuDoSelect(scanner,choice, service,userMap);}
-        catch (Exception e){
-        System.out.println("Only number excepted. Try again");}
+        menu.menuDoSelect(scanner, service,userMap);
     }while (true);
     }}
