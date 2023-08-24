@@ -6,13 +6,14 @@ import phone.entities.Phone;
 import java.util.*;
 
 public class CustomerManager {
-    public void add(Scanner scanner, Map<Integer, Customer>customers){
+    public void addCustomer(Scanner scanner, Map<Integer, Customer>customers){
         System.out.println("Enter customer name");
         String customerName = scanner.nextLine();
         System.out.println("Enter phone number");
         int phoneNumber = Integer.parseInt(scanner.nextLine());
         Customer customer = new Customer(customerName,phoneNumber);
         customers.put(customer.getPhoneNumber(),customer);
+        System.out.println("Add successful");
     }
     public void deleteCustomer(Scanner scanner, Map<Integer,Customer>customers){
         System.out.println("Enter customer's phone number");
@@ -49,22 +50,5 @@ public class CustomerManager {
             default -> System.out.println("Invalid choose. Choose again");
         }
     }
-    public void purchasePhone(List<Phone>purchasePhone,double totalPay,Scanner scanner, int n,Customer customer){
-        for (int i=0; i<n;i++){
-            System.out.println("Enter phone "+(i+1)+" information");
-            System.out.println("Brand:");
-            String brand = scanner.nextLine();
-            System.out.println("Phone name:");
-            String phoneName = scanner.nextLine();
-            System.out.println("Quantity:");
-            int quantity = Integer.parseInt(scanner.nextLine());
-            Phone phone=new Phone(phoneName,brand,quantity);
-            purchasePhone.add(phone);
-            if (quantity==1){
-            totalPay +=phone.getPrice();
-            customer.setTotalPay(totalPay);}
-            else if (quantity>1) {
-                totalPay+= (phone.getPrice()*quantity);
-            customer.setTotalPay(totalPay);}
-        }
-}}
+
+}

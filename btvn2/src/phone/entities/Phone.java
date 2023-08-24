@@ -38,4 +38,13 @@ public class Phone {
     public String getBrand() {
         return brand;
     }
+
+    @Override
+    public String toString() {
+        return "Phone{"+ name +
+                ", brand: " + brand +
+                ", price: " + price +
+                ", quantity: " + quantity +
+                '}';
+    }
 }
