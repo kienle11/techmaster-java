@@ -1,9 +1,12 @@
-package phone;
+package phone.service;
+
+import phone.entities.Customer;
+import phone.entities.Phone;
 
 import java.util.*;
 
 public class CustomerManager {
-    public void add(Scanner scanner, Map<Integer,Customer>customers){
+    public void add(Scanner scanner, Map<Integer, Customer>customers){
         System.out.println("Enter customer name");
         String customerName = scanner.nextLine();
         System.out.println("Enter phone number");

@@ -1,7 +1,6 @@
-package phone;
+package phone.entities;
 
 import java.util.List;
-import java.util.Map;
 
 public class Customer {
     private String name;

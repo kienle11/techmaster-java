@@ -1,10 +1,12 @@
-package phone;
+package phone.service;
+
+import phone.entities.Phone;
 
 import java.util.Map;
 import java.util.Scanner;
 
 public class PhoneStore {
-    public void add(Scanner sc, Map<String,Phone>phoneMap){
+    public void add(Scanner sc, Map<String, Phone>phoneMap){
         System.out.println("Enter brand");
         String brand = sc.nextLine();
         System.out.println("Phone's name");

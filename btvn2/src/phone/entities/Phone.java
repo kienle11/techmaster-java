@@ -1,4 +1,4 @@
-package phone;
+package phone.entities;
 
 public class Phone {
     private String name;
