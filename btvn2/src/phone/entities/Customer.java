@@ -15,6 +15,9 @@ public class Customer {
         this.totalPay = totalPay;
     }
 
+    public Customer() {
+    }
+
     public Customer(String name, int phoneNumber) {
         this.name = name;
         this.phoneNumber = phoneNumber;
