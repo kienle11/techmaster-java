@@ -65,5 +65,10 @@ public class CustomerManager {
             int quantity = Integer.parseInt(scanner.nextLine());
             Phone phone=new Phone(phoneName,brand,quantity);
             purchasePhone.add(phone);
-            totalPay +=phone.getPrice();}}
-}
+            if (quantity==1){
+            totalPay +=phone.getPrice();}
+            else if (quantity>1) {
+                totalPay+= (phone.getPrice()*quantity);
+            }
+        }
+}}
