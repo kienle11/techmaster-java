@@ -11,12 +11,7 @@ public class CustomerManager {
         String customerName = scanner.nextLine();
         System.out.println("Enter phone number");
         int phoneNumber = Integer.parseInt(scanner.nextLine());
-        System.out.println("Number of phones purchased");
-        int n = Integer.parseInt(scanner.nextLine());
-       List<Phone> purchasePhone= new ArrayList<>();
-       double totalPay = 0;
-       purchasePhone(purchasePhone,totalPay,scanner,n);
-        Customer customer = new Customer(customerName,phoneNumber,purchasePhone);
+        Customer customer = new Customer(customerName,phoneNumber);
         customers.put(customer.getPhoneNumber(),customer);
     }
     public void deleteCustomer(Scanner scanner, Map<Integer,Customer>customers){
@@ -54,7 +49,7 @@ public class CustomerManager {
             default -> System.out.println("Invalid choose. Choose again");
         }
     }
-    public void purchasePhone(List<Phone>purchasePhone,double totalPay,Scanner scanner, int n){
+    public void purchasePhone(List<Phone>purchasePhone,double totalPay,Scanner scanner, int n,Customer customer){
         for (int i=0; i<n;i++){
             System.out.println("Enter phone "+(i+1)+" information");
             System.out.println("Brand:");
@@ -66,9 +61,10 @@ public class CustomerManager {
             Phone phone=new Phone(phoneName,brand,quantity);
             purchasePhone.add(phone);
             if (quantity==1){
-            totalPay +=phone.getPrice();}
+            totalPay +=phone.getPrice();
+            customer.setTotalPay(totalPay);}
             else if (quantity>1) {
                 totalPay+= (phone.getPrice()*quantity);
-            }
+            customer.setTotalPay(totalPay);}
         }
 }}

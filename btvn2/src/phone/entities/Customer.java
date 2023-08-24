@@ -8,14 +8,24 @@ public class Customer {
     private List<Phone> purchasePhones;
     private double totalPay;
 
-    public Customer(String name, int phoneNumber,List<Phone> purchasePhones) {
+    public Customer(String name, int phoneNumber,List<Phone> purchasePhones, double totalPay) {
         this.name = name;
         this.phoneNumber = phoneNumber;
         this.purchasePhones = purchasePhones;
+        this.totalPay = totalPay;
+    }
+
+    public Customer(String name, int phoneNumber) {
+        this.name = name;
+        this.phoneNumber = phoneNumber;
     }
 
     public int getPhoneNumber() {
         return phoneNumber;
+    }
+
+    public void setTotalPay(double totalPay) {
+        this.totalPay = totalPay;
     }
 
     public String getName() {
