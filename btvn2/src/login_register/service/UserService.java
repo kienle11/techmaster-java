@@ -21,8 +21,8 @@ public class UserService {
             }
             System.out.println("Enter your password");
             String password = scanner.nextLine();
-            User user = new User(email, password);
-            userMap.put(userName, user);
+            User user = new User(userName,email, password);
+            userMap.put(user.getUserName(), user);
             System.out.println("Register success");
             break;
         } while (true);
@@ -46,8 +46,7 @@ public class UserService {
                         int choose = Integer.parseInt(scanner.nextLine());
                         switch (choose) {
                             case 1 -> {}
-                            case 2 -> {
-                            forgotPass(scanner, userMap, userName);}
+                            case 2 -> {forgotPass(scanner, userMap, userName);}
                         }
                     } catch (Exception e) {
                       System.out.println("Can only choose number");}
