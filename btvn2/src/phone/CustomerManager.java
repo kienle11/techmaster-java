@@ -10,21 +10,10 @@ public class CustomerManager {
         int phoneNumber = Integer.parseInt(scanner.nextLine());
         System.out.println("Number of phones purchased");
         int n = Integer.parseInt(scanner.nextLine());
-       List<Phone> userPhones= new ArrayList<>();
-        for (int i=0; i<n;i++){
-            System.out.println("Enter phone "+(i+1)+" information");
-            System.out.println("Brand:");
-            String brand = scanner.nextLine();
-            System.out.println("Phone name:");
-            String phoneName = scanner.nextLine();
-            System.out.println("Quantity:");
-            int quantity = Integer.parseInt(scanner.nextLine());
-            Phone phone=new Phone(phoneName,brand,quantity);
-            userPhones.add(phone);
-        }
-        System.out.println("The money has been payed");
-        double totalPay= Double.parseDouble(scanner.nextLine());
-        Customer customer = new Customer(customerName,phoneNumber,userPhones,totalPay);
+       List<Phone> purchasePhone= new ArrayList<>();
+       double totalPay = 0;
+       purchasePhone(purchasePhone,totalPay,scanner,n);
+        Customer customer = new Customer(customerName,phoneNumber,purchasePhone);
         customers.put(customer.getPhoneNumber(),customer);
     }
     public void deleteCustomer(Scanner scanner, Map<Integer,Customer>customers){
@@ -62,7 +51,16 @@ public class CustomerManager {
             default -> System.out.println("Invalid choose. Choose again");
         }
     }
-    public void purchasePhone(List<Phone>purchasePhone, Phone phone,double totalPay){
-    purchasePhone.add(phone);
-    totalPay +=phone.getPrice();}
+    public void purchasePhone(List<Phone>purchasePhone,double totalPay,Scanner scanner, int n){
+        for (int i=0; i<n;i++){
+            System.out.println("Enter phone "+(i+1)+" information");
+            System.out.println("Brand:");
+            String brand = scanner.nextLine();
+            System.out.println("Phone name:");
+            String phoneName = scanner.nextLine();
+            System.out.println("Quantity:");
+            int quantity = Integer.parseInt(scanner.nextLine());
+            Phone phone=new Phone(phoneName,brand,quantity);
+            purchasePhone.add(phone);
+            totalPay +=phone.getPrice();}}
 }

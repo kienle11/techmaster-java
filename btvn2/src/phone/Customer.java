@@ -9,11 +9,10 @@ public class Customer {
     private List<Phone> purchasePhones;
     private double totalPay;
 
-    public Customer(String name, int phoneNumber,List<Phone> purchasePhones, double totalPay) {
+    public Customer(String name, int phoneNumber,List<Phone> purchasePhones) {
         this.name = name;
         this.phoneNumber = phoneNumber;
         this.purchasePhones = purchasePhones;
-        this.totalPay = totalPay;
     }
 
     public int getPhoneNumber() {
