@@ -3,7 +3,7 @@ package tetris_puzzle;
 import javax.swing.*;
 
 public class WindowGame {
-    public static final int width=445, height = 629;
+    public static final int width=445, height = 635;
     private JFrame window;
     private Board board;
     public WindowGame(){
@@ -14,6 +14,7 @@ public class WindowGame {
         window.setLocationRelativeTo(null);
         board=new Board();
         window.add(board);
+        window.addKeyListener(board);
         window.setVisible(true);
     }
 
