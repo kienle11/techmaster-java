@@ -15,53 +15,67 @@ public class Board extends JPanel implements KeyListener {
     public static final int blockSide=30;
     private Timer looper;
     private Color[][] board=new Color[boardWidth][boardHeight];
-    private Color[][] shape = {
-            {Color.RED, Color.RED, Color.RED},
-            {null, Color.RED, null}
-    };
-    private int x=4, y=0; //X la column, Y la row
-    private int normal=600;
-    private int fast=50;
-    private int delayTimeForMovement=normal;
-    private long beginTime;
-    private int deltaX=0;
-    private boolean coolision=false;
+   private Color[] colors={Color.decode("#F93644"), Color.decode("#1299E2"), Color.decode("#97D151"),
+    Color.decode("#156EFF"), Color.decode("#2BE4FF"), Color.decode("#FF1ACE"), Color.decode("#9032D1")};
+    /* private int[][] shape1 = {
+            {1,1,1},
+            {0,1,0}
+    };*/
+    private Shape[] shapes=new Shape[7];
+    private Shape currentShape ;
+
 public Board(){
+    shapes[0]=new Shape(new int[][]{
+            {1,1,1,1}
+    },this,colors[0]);
+    shapes[1]=new Shape(new int[][]{
+            {1,1,1},
+            {0,1,0}
+    },this,colors[1]);
+    shapes[2]=new Shape(new int[][]{
+            {1,1,1},
+            {1,0,0}
+    },this,colors[2]);
+    shapes[3]=new Shape(new int[][]{
+            {1,1,1},
+            {0,0,1}
+    },this,colors[3]);
+    shapes[4]=new Shape(new int[][]{
+            {0,1,1},
+            {1,1,0}
+    },this,colors[4]);
+    shapes[5]=new Shape(new int[][]{
+            {1,1,0},
+            {0,1,1}
+    },this,colors[5]);
+    shapes[6]=new Shape(new int[][]{
+            {1,1},
+            {1,1}
+    },this,colors[6]);
+    currentShape=shapes[0];
     looper=new Timer(delay, new ActionListener() {
         int n =0;
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            if (coolision) {return;}
-            //Check movement horizontal
-            if (!(x+deltaX+shape[0].length>10)&&!(x+deltaX<0)){
-            x+=deltaX;}
-            deltaX=0;
-            if (System.currentTimeMillis()-beginTime>delayTimeForMovement){
-               if (!(y+1+shape.length>boardHeight)){
-                   y++;
-               }else {coolision=true;}
-                beginTime=System.currentTimeMillis();
-            }
+            update();
             repaint();
         }
     });
     looper.start();
+}
+public void update(){
+currentShape.update();
 }
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
         g.setColor(Color.BLACK);
         g.fillRect(0,0,getWidth(),getHeight());
-        //Draw the shape
-        for (int row=0;row<shape.length;row++){
-            for (int col=0;col<shape[0].length;col++){
-                if (shape[row][col]!=null) {
-                    g.setColor(shape[row][col]);
-                    g.fillRect(col * blockSide+x*blockSide, row * blockSide+y*blockSide, blockSide, blockSide);
-                }}
-        }
-        g.setColor(Color.black);
+        currentShape.render(g);
+
+
+        g.setColor(Color.white);
         //Draw the board
         for (int row=0;row<boardHeight;row++){
             g.drawLine(0,blockSide*row,blockSide*boardWidth,blockSide*row);
@@ -78,20 +92,20 @@ public Board(){
     @Override
     public void keyPressed(KeyEvent e) {
     if (e.getKeyCode()==KeyEvent.VK_DOWN){
-        delayTimeForMovement=fast;
+        currentShape.speedUp();
     }
     if (e.getKeyCode()==KeyEvent.VK_RIGHT){
-        deltaX=1;
+        currentShape.moveRight();
     }
         if (e.getKeyCode()==KeyEvent.VK_LEFT){
-            deltaX=-1;
+            currentShape.moveLeft();
         }
     }
 
     @Override
     public void keyReleased(KeyEvent e) {
         if (e.getKeyCode()==KeyEvent.VK_DOWN){
-            delayTimeForMovement=normal;
+           currentShape.speedDown();
         }
     }
 }
