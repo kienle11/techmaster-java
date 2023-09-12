@@ -19,10 +19,6 @@ public class Board extends JPanel implements KeyListener {
     private Color[][] board=new Color[boardHeight][boardWidth];
    private Color[] colors={Color.decode("#B62A0F"), Color.decode("#1299E2"), Color.decode("#97D151"),
     Color.decode("#156EFF"), Color.decode("#FF85CB"), Color.decode("#FF1ACE"), Color.decode("#9032D1")};
-    private int[][] shape1 = {
-            {1,1,1},
-            {0,1,0}
-    };
     private Shape[] shapes=new Shape[7];
     private Shape currentShape ;
 
